@@ -1,6 +1,8 @@
 //  button controls
 const start = document.querySelector('button.start')
 const stop = document.querySelector('button.stop')
+const lap = document.querySelector('button.lap')
+const reset = document.querySelector('button.reset')
 
 // DOM elements to update
 const lapList = document.querySelector('#lapList')
@@ -63,4 +65,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   start.addEventListener("click", stopwatchStart)
   stop.addEventListener("click", stopwatchStop)
+  lap.addEventListener("click", clickLap)
+  reset.addEventListener("click", clickReset)
+
 })
+
+//   a lap button that records the current stopwatch time into an Array.
+// Whenever a new lap is recorded, update the DOM with a list showing all the recorded
+// lap times.
+
+function clickLap(event){
+  event.preventDefault()
+  console.log("lap!")
+}
+
+function lapStart (){
+  if (event != null) {
+    event.preventDefault()
+}
+  var lapClicked = stopwatchUpdate(intervalId)
+  laps.push(lapClicked)
+}
+
+function recordsLap () {
+  var lapsArray = laps
+  var text = lapsArray[i]
+  lapList.innerHTML = text
+}
+
+// a reset button that immediately resets the stopwatch time to _0:00.00_ and clears all
+ // the recorded lap times.
+
+ function clickReset(event){
+   event.preventDefault()
+   console.log("reset!")
+ }
