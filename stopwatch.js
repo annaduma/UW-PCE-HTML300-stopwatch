@@ -70,32 +70,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-//   a lap button that records the current stopwatch time into an Array.
+//***   a lap button that records the current stopwatch time into an Array.
 // Whenever a new lap is recorded, update the DOM with a list showing all the recorded
-// lap times.
+// lap times.***
 
+// Console logs "log" when button is clicked
 function clickLap(event){
   event.preventDefault()
   console.log("lap!")
 }
 
+
+
 function lapStart (){
   if (event != null) {
     event.preventDefault()
 }
-  var lapClicked = stopwatchUpdate(intervalId)
+  var lapClicked = stopwatchUpdate()
   laps.push(lapClicked)
 }
 
+// records lap and prints it to DOM
 function recordsLap () {
-  var lapsArray = laps
-  var text = lapsArray[i]
+  var text = laps
+  var ul = document.getElementById("lapList")
+  var list = document.createElement("li")
   lapList.innerHTML = text
+  ul.appendChild(list)
 }
 
-// a reset button that immediately resets the stopwatch time to _0:00.00_ and clears all
- // the recorded lap times.
+//*** a reset button that immediately resets the stopwatch time to _0:00.00_ and clears all
+ // the recorded lap times.***
 
+ // Console logs "reset" when reset button is clicked
  function clickReset(event){
    event.preventDefault()
    console.log("reset!")
