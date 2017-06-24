@@ -78,25 +78,26 @@ document.addEventListener("DOMContentLoaded", function () {
 function clickLap(event){
   event.preventDefault()
   console.log("lap!")
+  lapStart();
 }
 
-
+var updatedTime = 0
 
 function lapStart (){
   if (event != null) {
     event.preventDefault()
 }
-  var lapClicked = stopwatchUpdate()
-  laps.push(lapClicked)
+  updatedTime = rawTime
+  laps.push(formatTime(updatedTime))
+  recordsLap();
 }
 
 // records lap and prints it to DOM
 function recordsLap () {
-  var text = laps
-  var ul = document.getElementById("lapList")
   var list = document.createElement("li")
-  lapList.innerHTML = text
-  ul.appendChild(list)
+  var text = laps[laps.length - 1]
+  list.innerHTML = text
+  lapList.appendChild(list)
 }
 
 //*** a reset button that immediately resets the stopwatch time to _0:00.00_ and clears all
