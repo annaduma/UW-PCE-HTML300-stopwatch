@@ -107,4 +107,12 @@ function recordsLap () {
  function clickReset(event){
    event.preventDefault()
    console.log("reset!")
+   resetTimer()
  }
+
+  function resetTimer() {
+    rawTime = 0
+    laps.length = 0
+    document.getElementById("lapList").innerHTML = ""
+    document.querySelector("#stopwatchTime").innerHTML = formatTime(0)
+  }
